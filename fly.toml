@@ -1,0 +1,19 @@
+app = "trmnl-byos"
+primary_region = "sjc"
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[mounts]
+  source = "trmnl_data"
+  destination = "/data"
+
+[env]
+  DATA_DIR = "/data"
+  REFRESH_RATE = "900"
